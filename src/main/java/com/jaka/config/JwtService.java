@@ -12,13 +12,13 @@ public class JwtService {
     return null;
   }
 
+  // Claims - piece of information asserted about a subject
   private Claims extractAllClaims(String token) {
-    return Jwts.parser()
-            .setSigningKey(getSigningKey())
-            .build()
-            .parseClaimsJws(token)
-            .getBody();
-
+    return Jwts.parserBuilder() // create a new parser builder
+            .setSigningKey(getSigningKey())  // set the key to verify the signature
+            .build() // build the parser
+            .parseClaimsJws(token) // parse the token
+            .getBody(); // get the body of the token
   }
 
   private Key getSigningKey() {
