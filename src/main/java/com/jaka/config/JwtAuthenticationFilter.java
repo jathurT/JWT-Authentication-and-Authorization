@@ -1,6 +1,5 @@
 package com.jaka.config;
 
-
 import com.jaka.user.User;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
@@ -21,8 +20,8 @@ import java.io.IOException;
 @Component
 @RequiredArgsConstructor
 public class JwtAuthenticationFilter extends OncePerRequestFilter { // filter that will intercept every request
-  private final JwtService jwtService;
 
+  private final JwtService jwtService;
   private final UserDetailsService userDetailService;
 
   @Override
