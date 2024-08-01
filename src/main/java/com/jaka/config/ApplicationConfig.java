@@ -24,6 +24,7 @@ public class ApplicationConfig {
             .orElseThrow(() -> new UsernameNotFoundException("User not found"));
   }
 
+//  Validates user credentials using UserDetailsService and PasswordEncoder interfaces.
   @Bean
   public AuthenticationProvider authenticationProvider() {
     DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
@@ -32,6 +33,7 @@ public class ApplicationConfig {
     return provider;
   }
 
+//  Provides a central place to manage the authentication process. It uses the configured AuthenticationProviders to authenticate a user.
   @Bean
   public AuthenticationManager authenticationManager(AuthenticationConfiguration configuration) throws Exception {
     return configuration.getAuthenticationManager();
