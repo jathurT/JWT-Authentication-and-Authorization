@@ -15,13 +15,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @RequiredArgsConstructor
 public class SecurityConfig {
   private final static String[] AUTH_WHITELIST = {
-          "/v2/api-docs",
-          "/swagger-resources",
-          "/swagger-resources/**",
-          "/configuration/ui",
-          "/configuration/security",
-          "/swagger-ui.html",
-          "/webjars/**"
+          "/api/v1/auth/**"
   };
 
   private final JwtAuthenticationFilter jwtAuthenticationFilter; // filter that will intercept every request
